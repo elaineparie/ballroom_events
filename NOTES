@@ -1,0 +1,26 @@
+
+- A command line interface for Ballroom Events, starting w/ ndca.org
+
+
+Shows a list of events
+
+Are you looking in a specific location?
+
+if yes,
+
+Please enter city name.
+
+User input.
+
+New List. 
+
+Which event do you want to learn more about?
+
+if no,
+
+Which event do you want to learn more about?
+
+-User input (number).
+
+
+Scrape location, date, organizer, website, contact info.
