@@ -27,50 +27,26 @@ def location
   when "boston"
     puts "Boston events"
     specific_event
-  #  search_again
   when "new york"
     puts "New York Events"
-    specific_event
-    ##search_again
-  #  goodbye
+   specific_event
   when "all"
     list_events
-   specific_event
-  #  search_again
     end
   end
 end
 
 def specific_event
-  puts "Enter the number of the event you want more information on or enter 'done' to exit the search."
+  puts "Enter the number of the event you want more information on or enter 'done' to go back to main menu."
   input = nil
-  while input != "done"
   input = gets.strip.downcase
-  case input
-  when "1"
+  if input == "1"
     puts "More info on event 1"
-    location
-  #  search_again
-  when "2"
+elsif input == "2"
     puts "More info on event 2"
-    location
-  #  search_again
-    end
+  elsif input == "done"
   end
 end
-
-
-#def search_again
-#  puts "Do you want to search again? Type 'yes' to refresh search or 'done' to exit"
-#  input = gets.strip.downcase
-#  input = nil
-#  while input != "done"
-#    case input
-#    when "yes"
-#   location
- #end
- #end
-#end
 
 def goodbye
     puts "Thanks for searching! See you at your next event."
