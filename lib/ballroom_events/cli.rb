@@ -10,7 +10,7 @@ class BallroomEvents::CLI
 
 
 def list_events
-  puts "Ballroom Events"
+  puts "Ballroom Events:"
   puts <<-DOC
   1. event 1
   2. event 2
@@ -34,6 +34,7 @@ def location
     list_events
     end
   end
+  @events = BallroomEvents::Event.this_location
 end
 
 def specific_event
