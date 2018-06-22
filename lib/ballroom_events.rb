@@ -7,3 +7,6 @@ end
 
 
 require_relative './ballroom_events/cli'
+
+require 'nokogiri'
+require 'open-uri'
