@@ -13,9 +13,6 @@ class BallroomEvents::Event
      #date - doc.css("tbody").children.css("td").first.text
   #  url - doc.css("tbody").children.css("a").attribute("href").value - need to add ndca.org before the URL
 
-
-
-
   #end
     #should return events in a certain location
     puts <<-DOC
@@ -33,6 +30,8 @@ class BallroomEvents::Event
       #returns multiple arrays of info
   end
 
+def make_event
+end 
 
 
 end
