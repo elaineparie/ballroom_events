@@ -6,12 +6,15 @@ class BallroomEvents::Event
   def self.this_location
 
     #def self.scrape_page
-    doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
-    binding.pry
+  #  doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
+    #binding.pry
 
-     doc.css("tbody").each do |event|
-       td = event.css("td")
-     end
+     #one event - doc.css("tbody").children.css("tr").first.text
+     #date - doc.css("tbody").children.css("td").first.text
+  #  url - doc.css("tbody").children.css("a").attribute("href").value - need to add ndca.org before the URL
+
+
+
 
   #end
     #should return events in a certain location
