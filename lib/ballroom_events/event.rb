@@ -5,9 +5,9 @@ class BallroomEvents::Event
 
   def self.this_location
 
-    #def self.scrape_page
-  #  doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
-    #binding.pry
+    #self.scrape_page
+   doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
+    binding.pry
 
      #one event - doc.css("tbody").children.css("tr").first.text
      #date - doc.css("tbody").children.css("td").first.text
@@ -33,10 +33,6 @@ class BallroomEvents::Event
       #returns multiple arrays of info
   end
 
-  def self.scrape_page
-  doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
-  binding.pry
-  end
 
 
 end
