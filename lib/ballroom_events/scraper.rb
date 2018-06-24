@@ -6,7 +6,8 @@ class BallroomEvents::Scraper
 end
 
 def scrape_page_index
-  self.get_page.css(("tbody").children.css("a").attribute("href").value)
+  url = self.get_page.css(("tbody").children.css("a").attribute("href").value)
+  binding.pry
 end
 
 def make_event

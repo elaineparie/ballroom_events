@@ -2,10 +2,9 @@
 class BallroomEvents::CLI
 
   def call
-    #BallroomEvents::Scraper
     list_events
     location
-#    goodbye
+    goodbye
 
   end
 
