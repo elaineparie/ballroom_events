@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    ballroom_events (0.1.0)
+      nokogiri
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.3)
+      mini_portile2 (~> 2.3.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ballroom_events!
+  bundler (~> 1.16)
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.2

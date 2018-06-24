@@ -47,8 +47,11 @@ elsif input == "2"
     puts "More info on event 2"
   elsif input == "done"
   end
-end
+
 
 def goodbye
     puts "Thanks for searching! See you at your next event."
+end
+
+
 end

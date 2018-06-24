@@ -1,9 +1,19 @@
-
+require 'pry'
 class BallroomEvents::Event
 
   attr_accessor :name, :location, :url, :contact_name, :contact_number, :contact_email
 
   def self.this_location
+
+    #def self.scrape_page
+    doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
+    binding.pry
+
+     doc.css("tbody").each do |event|
+       td = event.css("td")
+     end
+
+  #end
     #should return events in a certain location
     puts <<-DOC
     1. event 1
@@ -19,4 +29,11 @@ class BallroomEvents::Event
 
       #returns multiple arrays of info
   end
+
+  def self.scrape_page
+  doc = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
+  binding.pry
+  end
+
+
 end
