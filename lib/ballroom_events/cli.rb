@@ -5,7 +5,6 @@ class BallroomEvents::CLI
     list_events
     location
     goodbye
-
   end
 
 
@@ -15,8 +14,14 @@ def list_events
   1. event 1
   2. event 2
   DOC
+
+  @event = BallroomEvents::Event.all
   end
-end
+
+  def goodbye
+      puts "Thanks for searching! See you at your next event."
+      end
+
 
 def location
   input = nil
@@ -34,7 +39,6 @@ def location
     list_events
     end
   end
-  @events = BallroomEvents::Event.this_location
 end
 
 def specific_event
@@ -48,10 +52,6 @@ elsif input == "2"
   elsif input == "done"
   end
 
-
-def goodbye
-    puts "Thanks for searching! See you at your next event."
-end
-
+  end
 
 end
