@@ -10,10 +10,10 @@ class BallroomEvents::CLI
 
 def list_events
   puts "Ballroom Events:"
-  puts <<-DOC
-  1. event 1
-  2. event 2
-  DOC
+  @event = BallroomEvents::Event.all
+  @event.each.with_index(1) do |event, i|
+    puts "#{i}. #{event.name}"
+  end
 
   @event = BallroomEvents::Event.all
   end
