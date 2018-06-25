@@ -12,7 +12,7 @@ def list_events
   puts "Ballroom Events:"
   @event = BallroomEvents::Event.all
   @event.each.with_index(1) do |event, i|
-    puts "#{i}. #{event.name} - #{event.location}"
+    puts "#{i}. #{event.name} - #{event.}"
   end
 
   @event = BallroomEvents::Event.all
