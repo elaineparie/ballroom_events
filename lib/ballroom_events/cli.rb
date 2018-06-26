@@ -14,17 +14,27 @@ def create_events
   page = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
   rows = page.css("tbody")
   rows.each do |row|
-   date = row.css("td").children.first.text
-   url = row.css("a").attr("href").value #- need to add ndca.org before the URL
+   #date = row.css("td").children.first.text
+   url = "http://www.ndca.org#{row.css("a").attr("href").value}" #- need to add ndca.org before the URL
     #find event info using css
     #create new Event and assign attributes
+event_page = Nokogiri::HTML(open(url))
+binding.pry
+#events = {date: date,
+#url: url}
 
-events = {date: date,
-url: url}
-
-events_array << events
+#events_array << events
   end
 end
+
+def scrape_event_url(create_events)
+#  event_page = "https://ndca.org#{create_events}"
+  #binding.pry
+  page = Nokogiri::HTML(open(create_events))
+  binding.pry
+
+end
+
 
 
 def list_events
