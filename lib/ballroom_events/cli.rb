@@ -40,7 +40,7 @@ lines.each do |info|
   event.contact_email = single.css("dd")[4].text
   event.location = single.css("dd")[5].text
   event_array << event
-  event_array
+  binding.pry
     end
   end
 end

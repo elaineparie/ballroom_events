@@ -5,9 +5,10 @@ class BallroomEvents::Event
 
   @@all = []
 
-def initialize(name = nil)
-  @name = name
+def initialize
+#  @name = name
   @@all << self
+
 end
 
   def self.all
