@@ -2,6 +2,8 @@ require 'pry'
 #CLI Controller
 class BallroomEvents::CLI
 
+
+
   def call
     create_events
     list_events
@@ -38,7 +40,7 @@ lines.each do |info|
   event.contact_email = single.css("dd")[4].text
   event.location = single.css("dd")[5].text
   event_array << event
-  binding.pry
+  event_array
     end
   end
 end
@@ -53,7 +55,7 @@ def list_events
   2. event 2
   DOC
 
-  @event = BallroomEvents::Event.all
+  BallroomEvents::Event.all
   end
 
   def goodbye
