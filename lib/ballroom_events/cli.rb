@@ -10,17 +10,22 @@ class BallroomEvents::CLI
   end
 
 def create_events
+  events_array = []
   page = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
-  rows = page.css("tr")
+  rows = page.css("tbody")
   rows.each do |row|
-   #date - row.css("td").children.first.text
-   #url - row.css("a").attr("href").value - need to add ndca.org before the URL
-   #location - 
+   date = row.css("td").children.first.text
+   url = row.css("a").attr("href").value #- need to add ndca.org before the URL
     #find event info using css
     #create new Event and assign attributes
-  binding.pry
+
+events = {date: date,
+url: url}
+
+events_array << events
   end
 end
+
 
 def list_events
   puts "Ballroom Events:"
