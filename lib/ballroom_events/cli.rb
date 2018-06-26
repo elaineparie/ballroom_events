@@ -21,13 +21,26 @@ def create_events
 event_page = Nokogiri::HTML(open(url))
 lines = event_page.css("div#center")
 lines.each do |info|
+  #name = info.css("h3").text
+  specific_info = info.css("dl")
+  specific_info.each do |single|
+  contact_name = single.css("dd")[0].text
+  event_url = single.css("dd")[1].text
+  contact_number = single.css("dd")[2].text
+  contact_email = single.css("dd")[4].text
+  location = single.css("dd")[5].text
+
+
+
+
   binding.pry
+end
 end
   info
   binding.pry
 binding.pry
 
-#name = event_page.css("h3").first.text
+
 #location
 #events = {date: date,
 #url: url}
