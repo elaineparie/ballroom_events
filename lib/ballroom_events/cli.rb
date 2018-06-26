@@ -10,41 +10,36 @@ class BallroomEvents::CLI
   end
 
 def create_events
-  events_array = []
   page = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
   rows = page.css("tbody")
   rows.each do |row|
   date = row.css("td").children.first.text
   url = "http://www.ndca.org#{row.css("a").attr("href").value}"
+
+  scrape_event_url(url)
     #find event info using css
     #create new Event and assign attributes
   end
 end
 
-    def scrape_event_url
+    def scrape_event_url(url)
 event_page = Nokogiri::HTML(open(url))
 lines = event_page.css("div#center")
 lines.each do |info|
   #name = info.css("h3").text
   specific_info = info.css("dl")
   specific_info.each do |single|
-  contact_name = single.css("dd")[0].text
-  event_url = single.css("dd")[1].text
-  contact_number = single.css("dd")[2].text
-  contact_email = single.css("dd")[4].text
-  location = single.css("dd")[5].text
+      event = BallroomEvents::Event.new
+  event.contact_name = single.css("dd")[0].text
+  event.url = single.css("dd")[1].text
+  event.contact_number = single.css("dd")[2].text
+  event.contact_email = single.css("dd")[4].text
+  event.location = single.css("dd")[5].text
+  binding.pry
     end
   end
 end
 
-
-def scrape_event_url(create_events)
-#  event_page = "https://ndca.org#{create_events}"
-  #binding.pry
-  page = Nokogiri::HTML(open(create_events))
-  binding.pry
-
-end
 
 
 
