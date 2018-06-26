@@ -1,19 +1,30 @@
+require 'pry'
 #CLI Controller
 class BallroomEvents::CLI
 
   def call
+    create_events
     list_events
     location
     goodbye
   end
 
+def create_events
+  page = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
+  rows = page.css("tr")
+  rows.each do |row|
+    #find event info using css
+    #create new Event and assign attributes
+  binding.pry
+  end
+end
 
 def list_events
   puts "Ballroom Events:"
-  @event = BallroomEvents::Event.all
-  @event.each.with_index(1) do |event, i|
-    puts "#{i}. #{event.name} - #{event.}"
-  end
+  puts <<-DOC
+  1. event 1
+  2. event 2
+  DOC
 
   @event = BallroomEvents::Event.all
   end
