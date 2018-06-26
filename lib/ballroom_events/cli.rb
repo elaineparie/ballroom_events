@@ -17,7 +17,6 @@ def create_events
   rows.each do |row|
   date = row.css("td").children.first.text
   url = "http://www.ndca.org#{row.css("a").attr("href").value}"
-
   scrape_event_url(url)
     #find event info using css
     #create new Event and assign attributes
@@ -49,14 +48,14 @@ end
 
 
 def list_events
-  puts "Ballroom Events:"
-  puts <<-DOC
-  1. event 1
-  2. event 2
-  DOC
+  self.create_events
+all_events = BallroomEvents::Event.all
 
-  BallroomEvents::Event.all
+
+#  BallroomEvents::Event.all
+binding.pry
   end
+
 
   def goodbye
       puts "Thanks for searching! See you at your next event."
