@@ -13,6 +13,9 @@ def create_events
   page = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
   rows = page.css("tr")
   rows.each do |row|
+   #date - row.css("td").children.first.text
+   #url - row.css("a").attr("href").value - need to add ndca.org before the URL
+   #location - 
     #find event info using css
     #create new Event and assign attributes
   binding.pry
