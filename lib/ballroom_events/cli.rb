@@ -23,18 +23,21 @@ def create_events
 end
 
     def scrape_event_url(url)
+      event_array = []
 event_page = Nokogiri::HTML(open(url))
 lines = event_page.css("div#center")
 lines.each do |info|
-  #name = info.css("h3").text
+  event = BallroomEvents::Event.new
+  event.name = info.css("h3").text
+  event.date = info.css("h6").text.split(" at")[0]
   specific_info = info.css("dl")
   specific_info.each do |single|
-      event = BallroomEvents::Event.new
   event.contact_name = single.css("dd")[0].text
   event.url = single.css("dd")[1].text
   event.contact_number = single.css("dd")[2].text
   event.contact_email = single.css("dd")[4].text
   event.location = single.css("dd")[5].text
+  event_array << event
   binding.pry
     end
   end
