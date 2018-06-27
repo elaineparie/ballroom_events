@@ -15,9 +15,10 @@ end
 
   def self.all
     @@all
+    binding.pry
   end
 
   def self.find_by_name(input)
-    binding.pry
+
   end
 end
