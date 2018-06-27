@@ -46,8 +46,8 @@ end
 
 def list_events
   all_events = BallroomEvents::Event.all
-  all_events.each do |event|
-    puts "#{event.date} - #{event.name} - #{event.location}"
+  all_events.each.with_index do |event, index|
+    puts "#{index}. #{event.date} - #{event.name} - #{event.location}"
   end
   end
 
@@ -60,7 +60,7 @@ def list_events
 def location
   input = nil
   while input != "done"
-    puts "Enter the name of the city you want to search or type 'all' to browse all events. Type 'done' to leave your search."
+    puts "Enter the number of the event you want more information on or type 'done' to leave your search."
     input = gets.strip
     #BallroomEvents::Event.find_by_name(input)
   end
