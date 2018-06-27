@@ -62,8 +62,9 @@ def specific_event
   input = gets.strip.downcase
   event = BallroomEvents::Event.all
   if input.to_i > 0
-    event[input.to_i - 1]
     binding.pry
+    event = event[input.to_i - 1]
+
     puts "Event Organizer: #{event.contact_name}, Organizer Phone: #{event.contact_number}, Organizer Email: #{event.contact_email}, Website: {event.url}"
 elsif input == "all"
     list_events
