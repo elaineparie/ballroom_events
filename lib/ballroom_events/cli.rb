@@ -7,7 +7,7 @@ class BallroomEvents::CLI
   def call
     create_events
     list_events
-    location
+    specific_event
     goodbye
   end
 
@@ -57,23 +57,15 @@ def list_events
       end
 
 
-def location
-  input = nil
-  while input != "done"
-    puts "Enter the number of the event you want more information on or type 'done' to leave your search."
-    input = gets.strip
-    #BallroomEvents::Event.find_by_name(input)
-  end
-end
-
 def specific_event
   puts "Enter the number of the event you want more information on or enter 'done' to go back to main menu."
-  input = nil
   input = gets.strip.downcase
-  if input == "1"
-    puts "More info on event 1"
-elsif input == "2"
-    puts "More info on event 2"
+  event = BallroomEvents::Event.all
+  if input.to_i > 0
+    event[input - 1]
+    puts "Event Organizer: #{event.contact_name}, Organizer Phone: #{event.contact_number}, Organizer Email: #{event.contact_email}, Website: {event.url}"
+elsif input == "all"
+    list_events
   elsif input == "done"
   end
 
