@@ -45,7 +45,10 @@ end
 
 
 def list_events
-  BallroomEvents::Event.all
+  all_events = BallroomEvents::Event.all
+  all_events.each do |event|
+    puts "#{event.date} - #{event.name} - #{event.location}"
+  end
   end
 
 
