@@ -14,7 +14,8 @@ class BallroomEvents::CLI
 def create_events
   page = Nokogiri::HTML(open("http://www.ndca.org/events/calendar/2018/"))
   rows = page.css("tr")
-#  rows = rows.slice(1)
+  rows = rows.drop(1)
+#get rid of first element of array e
     binding.pry
     rows.each do |info|
   url = "http://www.ndca.org#{info.css("a").attr("href").value}"
