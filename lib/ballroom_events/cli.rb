@@ -6,7 +6,7 @@ class BallroomEvents::CLI
 
   def call
     create_events
-    #list_events
+    list_events
     location
     goodbye
   end
@@ -45,6 +45,7 @@ end
 
 
 def list_events
+  BallroomEvents::Event.all
   end
 
 
