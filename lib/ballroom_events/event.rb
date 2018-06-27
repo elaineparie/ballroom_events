@@ -6,14 +6,18 @@ class BallroomEvents::Event
   @@all = []
 
 def initialize
-#  @name = name
-  @@all << self
+  save
+end
 
+def save
+  @@all << self
 end
 
   def self.all
-    #returns all events
-
     @@all
+  end
+
+  def self.find_by_name(input)
+    binding.pry
   end
 end
