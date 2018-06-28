@@ -1,6 +1,6 @@
 # BallroomEvents
 
-This Ruby Gem provides a CLI to view the all ballroom events and competitions provided by ndca.org (National Dance Council of America).
+This Ruby Gem provides a CLI to view all ballroom events and competitions provided by ndca.org (National Dance Council of America).
 
 
 ## Installation
