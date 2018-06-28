@@ -58,15 +58,17 @@ def list_events
 
 
 def specific_event
-  puts "Enter the number of the event you want more information on or enter 'done' to go back to main menu."
+  puts "Enter the number of the event you want more information on or enter 'done' to exit search."
   input = gets.strip.downcase
   event = BallroomEvents::Event.all
   if input.to_i > 0
     event = event[input.to_i - 1]
 
     puts "Event Organizer: #{event.contact_name}, Organizer Phone: #{event.contact_number}, Organizer Email: #{event.contact_email}, Website: {event.url}"
+    specific_event
 elsif input == "all"
     list_events
+    specific_event
   elsif input == "done"
   end
 
