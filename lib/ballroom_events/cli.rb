@@ -34,7 +34,7 @@ lines = event_page.css("div#center")
   event.date = lines.css("h6").text.split(" at")[0]
   specific_info = lines.css("dl")
   event.contact_name = specific_info.css("dd")[0].text
-  event.url = specific_info.css("dd")[1].text
+  event.web = specific_info.css("dd")[1].text
   event.contact_number = specific_info.css("dd")[2].text
   event.contact_email = specific_info.css("dd")[4].text
   event.location = specific_info.css("dd")[5].text
@@ -64,7 +64,7 @@ def specific_event
   if input.to_i > 0
     event = event[input.to_i - 1]
 
-    puts "Event Organizer: #{event.contact_name}, Organizer Phone: #{event.contact_number}, Organizer Email: #{event.contact_email}, Website: {event.url}"
+    puts "Event Organizer: #{event.contact_name}, Organizer Phone: #{event.contact_number}, Organizer Email: #{event.contact_email}, Website: #{event.web}"
     specific_event
 elsif input == "all"
     list_events
