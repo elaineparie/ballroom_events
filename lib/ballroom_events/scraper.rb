@@ -14,6 +14,7 @@ class BallroomEvents::Scraper
      event.name = info.css("a").text
      event.date = info.css("td").children[0].text
     event.url = "http://www.ndca.org#{info.css("a").attr("href").value}"
+    event.location = info.css("td").children[2].text
 
     #  self.scrape_event_url(url)
     end
@@ -28,7 +29,6 @@ class BallroomEvents::Scraper
     event.web = specific_info.css("dd")[1].text
     event.contact_number = specific_info.css("dd")[2].text
     event.contact_email = specific_info.css("dd")[4].text
-    event.location = specific_info.css("dd")[5].text
     event
   end
 
